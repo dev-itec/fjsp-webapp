@@ -15,6 +15,12 @@ class CreateAuditsTable extends Migration
     {
         Schema::create('audits', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->string('file_path', 255);
+            $table->string('file_name', 255);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

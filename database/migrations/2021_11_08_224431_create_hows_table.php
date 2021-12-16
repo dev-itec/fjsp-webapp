@@ -15,6 +15,10 @@ class CreateHowsTable extends Migration
     {
         Schema::create('hows', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->string('description', 255);
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

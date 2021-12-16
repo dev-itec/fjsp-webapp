@@ -15,6 +15,10 @@ class CreateAlliesTable extends Migration
     {
         Schema::create('allies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ngo_id');
+            $table->foreign('ngo_id')->references('id')->on('ngos')->onDelete('cascade');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->timestamps();
         });
     }

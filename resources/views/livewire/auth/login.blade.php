@@ -1,12 +1,14 @@
 <section>
-    <div class="page-header section-height-75">
+    <div class="page-header section-height-75 background">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-                    <div class="card card-plain mt-8">
+                    <div class="card card-plain mt-4">
+                        <div class="card card-plain mt-1">
+                            <img class="align-content-sm-center" src="{{ asset('assets/img/logo-app.png') }}" alt="">
+                        </div>
                         <div class="card-header pb-0 text-left bg-transparent">
                             <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome back') }}</h3>
-
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
@@ -47,6 +49,11 @@
                                 <a href="{{ route('sign-up') }}"
                                     class="text-info text-gradient font-weight-bold">{{ __('aquí') }}</a>
                             </p>
+                        </div>
+                        <div class="flex items-center justify-end mt-4">
+                            <a href="{{ url('auth/google') }}">
+                                <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                            </a>
                         </div>
                     </div>
                 </div>

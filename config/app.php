@@ -140,6 +140,7 @@ return [
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
@@ -194,6 +195,7 @@ return [
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,

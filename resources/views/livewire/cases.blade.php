@@ -1,3 +1,13 @@
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
+    <div class="alert alert-neutral mx-0" role="alert">
+        <span class="text-white d-flex justify-content-end">
+            <button class="btn btn-icon btn-3 btn-primary " type="button">
+                <span class="btn-inner--icon">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="btn-inner--text">Agregar Casos</span>
+            </button>
+        </span>
+    </div>
+    <x-ngos.cases></x-ngos.cases>
 </div>

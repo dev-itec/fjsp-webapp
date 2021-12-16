@@ -115,6 +115,29 @@
       <path value="$PROJECT_DIR$/vendor/league/config" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/mediconesystems/livewire-datatables" />
+      <path value="$PROJECT_DIR$/vendor/asantibanez/livewire-calendar" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/imritesh/livecrud" />
+      <path value="$PROJECT_DIR$/vendor/flightsadmin/livewire-crud" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">

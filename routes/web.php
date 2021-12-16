@@ -18,6 +18,7 @@ use App\Http\Livewire\Projects;
 use App\Http\Livewire\Hows;
 use App\Http\Livewire\Directory;
 use App\Http\Livewire\Configs;
+use App\Http\Livewire\Users;
 //use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
 //use App\Http\Livewire\Tables;
@@ -27,6 +28,7 @@ use App\Http\Livewire\Profile;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Controllers\GoogleController;
 
 use Illuminate\Http\Request;
 
@@ -40,11 +42,13 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::get('/', Login::class)->name('login');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
-Route::get('/login', Login::class)->name('login');
+//Route::get('/login', Login::class)->name('login');
 
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
 
@@ -64,6 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/hows', Hows::class)->name('hows');
     Route::get('/directory', Directory::class)->name('directory');
     Route::get('/configs', Configs::class)->name('configs');
+    Route::get('/users', Users::class)->name('users');
 
     //Route::get('/billing', Billing::class)->name('billing');
     Route::get('/profile', Profile::class)->name('profile');
@@ -90,3 +95,9 @@ Ajustes                 config
 Usuarios                config
 Parametros              config
 */
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route Hooks - Do not delete//
