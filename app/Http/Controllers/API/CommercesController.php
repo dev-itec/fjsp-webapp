@@ -12,10 +12,6 @@ class CommercesController extends Controller
 
         $data = $request->json()->all();
 
-        $item = Commerce::where('id', $data['id'])->first();
-        if ($item != null)
-            return response(['id' => $item->id, 'message' => 'Existing'], 200);
-
         $item = new Commerce();
         $item->name = $data['name'] ?? 'N/A';
         $item->save();
