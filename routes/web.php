@@ -43,7 +43,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
-Route::get('/', Login::class)->name('login');
+Route::get('/', Login::class)->name('login2');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 //Route::get('/login', Login::class)->name('login');
