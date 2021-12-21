@@ -14,10 +14,10 @@ class User extends Component
     public $paginate = 10;
 
     public $name;
-   public $last_name;
-   public $email;
-   public $password;
-   public $google_id;
+    public $last_name;
+    public $email;
+    public $password;
+    public $google_id;
 
 
     public $mode = 'create';
@@ -31,14 +31,13 @@ class User extends Component
     public $showConfirmDeletePopup = false;
 
     protected $rules = [
-'name' => 'required',
-'last_name' => 'required',
-'email' => 'required',
-'password' => 'required',
-'google_id' => 'required',
+        'name' => 'required',
+        'last_name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+        'google_id' => 'required',
 
-];
-
+    ];
 
 
     public function updated($propertyName)
@@ -53,14 +52,14 @@ class User extends Component
 
     public function render()
     {
-        $model = Model::where('name', 'like', '%'.$this->search.'%')->orWhere('last_name', 'like', '%'.$this->search.'%')->orWhere('email', 'like', '%'.$this->search.'%')->orWhere('password', 'like', '%'.$this->search.'%')->orWhere('google_id', 'like', '%'.$this->search.'%')->latest()->paginate($this->paginate);
+        $model = Model::where('name', 'like', '%' . $this->search . '%')->orWhere('last_name', 'like', '%' . $this->search . '%')->orWhere('email', 'like', '%' . $this->search . '%')->orWhere('password', 'like', '%' . $this->search . '%')->orWhere('google_id', 'like', '%' . $this->search . '%')->latest()->paginate($this->paginate);
         return view('livewire.user', [
-            'rows'=> $model
+            'rows' => $model
         ]);
     }
 
 
-    public function create ()
+    public function create()
     {
         $this->mode = 'create';
         $this->resetForm();
@@ -74,12 +73,11 @@ class User extends Component
         $this->primaryId = $primaryId;
         $model = Model::find($primaryId);
 
-        $this->name= $model->name;
-$this->last_name= $model->last_name;
-$this->email= $model->email;
-$this->password= $model->password;
-$this->google_id= $model->google_id;
-
+        $this->name = $model->name;
+        $this->last_name = $model->last_name;
+        $this->email = $model->email;
+        $this->password = $model->password;
+        $this->google_id = $model->google_id;
 
 
         $this->showForm = true;
@@ -92,51 +90,51 @@ $this->google_id= $model->google_id;
 
     public function store()
     {
-          $this->validate();
+        $this->validate();
 
-          $model = new Model();
+        $model = new Model();
 
-             $model->name= $this->name;
-$model->last_name= $this->last_name;
-$model->email= $this->email;
-$model->password= $this->password;
-$model->google_id= $this->google_id;
- $model->save();
+        $model->name = $this->name;
+        $model->last_name = $this->last_name;
+        $model->email = $this->email;
+        $model->password = $this->password;
+        $model->google_id = $this->google_id;
+        $model->save();
 
-          $this->resetForm();
-          session()->flash('message', 'Record Saved Successfully');
-          $this->showForm = false;
+        $this->resetForm();
+        session()->flash('message', 'Record Saved Successfully');
+        $this->showForm = false;
     }
 
     public function resetForm()
     {
-        $this->name= "";
-$this->last_name= "";
-$this->email= "";
-$this->password= "";
-$this->google_id= "";
+        $this->name = "";
+        $this->last_name = "";
+        $this->email = "";
+        $this->password = "";
+        $this->google_id = "";
 
     }
 
 
     public function update()
     {
-          $this->validate();
+        $this->validate();
 
-          $model = Model::find($this->primaryId);
+        $model = Model::find($this->primaryId);
 
-             $model->name= $this->name;
-$model->last_name= $this->last_name;
-$model->email= $this->email;
-$model->password= $this->password;
-$model->google_id= $this->google_id;
- $model->save();
+        $model->name = $this->name;
+        $model->last_name = $this->last_name;
+        $model->email = $this->email;
+        $model->password = $this->password;
+        $model->google_id = $this->google_id;
+        $model->save();
 
-          $this->resetForm();
-           
-          $this->showForm = false;
-          
-         session()->flash('message', 'Record Updated Successfully');
+        $this->resetForm();
+
+        $this->showForm = false;
+
+        session()->flash('message', 'Record Updated Successfully');
     }
 
     public function confirmDelete($primaryId)

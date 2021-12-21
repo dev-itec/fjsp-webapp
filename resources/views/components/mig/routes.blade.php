@@ -1,14 +1,55 @@
 <div>
+    @if(Auth::user()->role == '0')
     <div class="alert alert-neutral mx-0" role="alert">
         <span class="text-white d-flex justify-content-end">
-            <button class="btn btn-icon btn-3 btn-primary " type="button">
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 <span class="btn-inner--icon">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="btn-inner--text">Agregar Ruta</span>
-            </button>
+        <span class="btn-inner--text">Añadir </span>
+    </button>
+        </span>
+
+        <!-- Modal -->
+        <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Añadir Mapa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true close-btn">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Punto inicio</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="Indique el punto de inicio" wire:model="name">
+                                @error('name') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Punto Destino</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="Indique el punto destino" wire:model="ngo">
+                                @error('name') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                        <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </span>
     </div>
+    @endif
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16289433.169682765!2d-83.39715810640162!3d4.6097012817348455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1sen!2sco!4v1639598341485!5m2!1sen!2sco" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
     <div class="row my-4">

@@ -1,3 +1,3 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <iframe src="http://localhost:8000/chatify" class="w-100 vh-100 d-inline-block"></iframe>
 </div>

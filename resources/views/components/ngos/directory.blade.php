@@ -7,7 +7,7 @@
                         <a href="javascript:;">
                             <div class="position-relative">
                                 <div class="blur-shadow-image">
-                                    <img class="w-100 rounded-3 shadow-lg" src="./assets/img/bruce-mars.jpg">
+                                    <img class="w-100 rounded-3 shadow-lg" src="./storage/users-avatar/840eecd0-f900-4f7d-b596-9eb2053b73b7.jpg">
                                 </div>
                             </div>
                         </a>

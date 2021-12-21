@@ -17,57 +17,21 @@
         <meta  name="twitter:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
         <meta  name="twitter:creator" content="@creativetim" />
         <meta  name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
-        <meta  property="fb:app_id" content="655968634437471" />
         <meta  property="og:title" content="Soft UI Dashboard Laravel by Creative Tim & UPDIVISION" />
         <meta  property="og:type" content="article" />
         <meta  property="og:url" content="https://www.creative-tim.com/live/vue-argon-dashboard-laravel" />
         <meta  property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/492/original/opt_sd_laravel_thumbnail.jpg" />
         <meta  property="og:description" content="Dozens of handcrafted UI components, Laravel authentication, register & profile editing, Livewire & Alpine.js" />
         <meta  property="og:site_name" content="Creative Tim" />
-        <script>
-            (function(a,s,y,n,c,h,i,d,e){
-                s.className+=' '+y;
-                h.start=1*new Date;
-                h.end=i=function(){
-                    s.className=s.className.replace(RegExp(' ?'+y),'')
-                };
-                (a[n]=a[n]||[]).hide=h;
-                setTimeout(function(){i();h.end=null},c);
-                h.timeout=c;
-            })(window,document.documentElement,'async-hide','dataLayer',4000,
-            {'GTM-K9BGS8K':true});
-        </script>
-        <script>
-            (function(i,s,o,g,r,a,m){
-                i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
-                a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
-                m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-46172202-22', 'auto', {allowLinker: true});
-            ga('set', 'anonymizeIp', true);
-            ga('require', 'GTM-K9BGS8K');
-            ga('require', 'displayfeatures');
-            ga('require', 'linker');
-            ga('linker:autoLink', ["2checkout.com","avangate.com"]);
-            </script>
-        <script>
-            (function(w,d,s,l,i)
-                {w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});
-                var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-                j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NKDMSK6');
-        </script>
+
     @endif
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        FJSP
+        MiPana - Hecho por venezolanos.
     </title>
+    <!-- Tailwind     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css" integrity="sha512-l7qZAq1JcXdHei6h2z8h8sMe3NbMrmowhOl+QkP3UhifPpCW2MC4M0i26Y8wYpbz1xD9t61MLT9L1N773dzlOA==" crossorigin="anonymous" />
     <!-- Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -81,10 +45,10 @@
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @livewireStyles
-
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
+{{--<body class="g-sidenav-show bg-gradient-faded-primary-vertical text-light">--}}
 
     {{ $slot }}
 
@@ -106,7 +70,24 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.2"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     @livewireScripts
+    <script type="text/javascript">
+        window.livewire.on('showConfirmDelete', () => {
+            $('#deleteModal').modal('show');
+        });
+        window.livewire.on('hideConfirmDelete', () => {
+            $('#deleteModal').modal('hide');
+        });
+        window.livewire.on('showForm', () => {
+            $('#showForm').modal('show');
+        });
+        window.livewire.on('hideForm', () => {
+            $('#showForm').modal('hide');
+        });
+    </script>
 </body>
 
 </html>

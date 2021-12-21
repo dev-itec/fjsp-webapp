@@ -15,7 +15,8 @@ class UpdateUsersNgo extends Migration
     {
         Schema::table('users', function ($table) {
             $table->unsignedBigInteger('ngo_id');
-            $table->foreign('ngo_id')->references('id')->on('ngos');
+            $table->foreign('ngo_id')->references('id')->on('ngos')->change();
+
         });
     }
 
