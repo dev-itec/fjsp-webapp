@@ -34,7 +34,7 @@
                                     class="text-info text-gradient font-weight-bold">{{ __('aquí') }}</a>
                             </p>
                         </div>
-                        {{--<div class="accordion" id="accordionExample">
+                        <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button btn btn-light btn-lg bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -85,7 +85,7 @@
                             </a>
                         </div>
                     </div>
-                </div>--}}
+                </div>
                 {{--<div class="col-md-6">
                     <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
                         <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
