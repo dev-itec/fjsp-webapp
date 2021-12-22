@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Commerce;
+use Illuminate\Http\JsonResponse;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,10 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class CommercesController extends Controller
 {
-    function create(Request $request){
+    function create(Request $request)
+    {
 
         $data = $request->json()->all();
-        $user_id = Auth::user()->id;
+        $user_id = Auth::user()->id??null;
 
         $item = new Commerce();
         $item->name = $data['name'] ?? 'N/A';
@@ -39,14 +41,17 @@ class CommercesController extends Controller
         return response(['id' => $item->id, 'message' => 'Created'], 201);
 
     }
-    function read(Request $request){
+
+    function read(Request $request): JsonResponse
+    {
         $models = Commerce::all();
         return response()->json($models);
     }
+
     function update($id, Request $request)
     {
         $data = $request->json()->all();
-        $user_id = Auth::user()->id;
+        //$user_id = Auth::user()->id;
 
         $item = Commerce::where('id', $id)->first();
         if ($item == null)
@@ -70,18 +75,17 @@ class CommercesController extends Controller
         $item->tel = $data['tel'] ?? 'no indica telefono';
         $item->save();
 
-        return response(['id' => $item->id, 'message' => 'Updated'], 200);
+        return response(['id' => $id, 'message' => 'Updated'], 200);
     }
-    function delete($id, Request $request){
 
-        $data = $request->json()->all();
-
-        $item = Commerce::where('id', $data['id'])->first();
+    function delete($id, Request $request)
+    {
+        $item = Commerce::where('id', $id)->first();
         if ($item == null)
-            return response(['id' => $item->id, 'message' => 'Not found'], 404);
+            return response(['id' => $id, 'message' => 'Not found'], 404);
 
         $item->delete();
 
-        return response(['id' => $item->id, 'message' => 'Deleted'], 200);
+        return response(['id' => $id, 'message' => 'Deleted'], 200);
     }
 }

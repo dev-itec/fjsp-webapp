@@ -21,10 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::post('user/data', [Users::class,'data'])->name('api.user.data');
 
 /* COMMERCES */
-Route::post('commerce', [CommercesController::class, 'create'])->name('api.commerce.create');
-Route::get('commerce', [CommercesController::class, 'read'])->name('api.commerce.read');
-Route::put('commerce', [CommercesController::class, 'update'])->name('api.commerce.update');
-Route::delete('commerce', [CommercesController::class, 'delete'])->name('api.commerce.delete');
-
-
-
+//Route::group(['middleware' => 'auth:api'], function() {
+    Route::post('commerce', [CommercesController::class, 'create'])->name('api.commerce.create');
+    Route::get('commerce', [CommercesController::class, 'read'])->name('api.commerce.read');
+    Route::put('commerce/{id}', [CommercesController::class, 'update'])->name('api.commerce.update');
+    Route::delete('commerce/{id}', [CommercesController::class, 'delete'])->name('api.commerce.delete');
+//});
