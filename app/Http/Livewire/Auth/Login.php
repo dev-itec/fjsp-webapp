@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Auth;
 
 use Livewire\Component;
 use App\Models\User;
-use Laravel\Fortify\Contracts\LogoutResponse;
+//use Laravel\Fortify\Contracts\LogoutResponse;
 
 class Login extends Component
 {

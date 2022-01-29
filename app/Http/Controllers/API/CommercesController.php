@@ -16,7 +16,7 @@ class CommercesController extends Controller
     {
 
         $data = $request->json()->all();
-        $user_id = Auth::user()->id??null;
+        //$user_id = Auth::user()->id??null;
 
         $item = new Commerce();
         $item->name = $data['name'] ?? 'N/A';
@@ -32,7 +32,7 @@ class CommercesController extends Controller
         $item->email = $data['email'] ?? 'no indica correo';
         $item->secret = Hash::make($data['secret']);
         $item->is_active = 1;
-        $item->created_by = $user_id;
+        $item->created_by = 1;
         $item->created_at = Carbon::now();
         $item->city = $data['city'] ?? null;
         $item->tel = $data['tel'] ?? 'no indica telefono';

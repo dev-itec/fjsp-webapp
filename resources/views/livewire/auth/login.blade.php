@@ -41,7 +41,7 @@
                                         LOGIN
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-expanded="true" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="card-body pt-0">
                                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
